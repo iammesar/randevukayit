@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevu Takip Uygulaması</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #day-select {
+      margin-bottom: 10px;
+    }
+    .status-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .progress-container {
+      flex: 1;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 10px;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #007BFF;
+      transition: width 0.3s ease-in-out;
+    }
+    .status-text {
+      margin-left: 10px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    .time-slot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .time-slot button {
+      padding: 5px 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .time-slot button.delete {
+      background-color: #DC3545;
+    }
+    #modal {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    #schedule {
+      margin-top: 20px;
+    }
+    #modal h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Randevu Takip Uygulaması</h1>
+
+  <!-- Gün seçimi -->
+  <div id="day-status">
+    <!-- Günlerin doluluk oranı burada gösterilecek -->
+  </div>
+  <select id="day-select">
+    <option value="">Gün Seçin</option>
+  </select>
+
+  <!-- Saatlerin listeleneceği alan -->
+  <div id="schedule"></div>
+
+  <!-- Randevu Ekleme Modalı -->
+  <div id="modal">
+    <h3>Randevu Ekle</h3>
+    <p id="modal-time"></p>
+    <input type="text" id="appointment-text" placeholder="Randevu bilgisi girin">
+    <button id="save-appointment">Kaydet</button>
+    <button id="close-modal">İptal</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
